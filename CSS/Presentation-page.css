@@ -1,0 +1,101 @@
+body {
+	background-image: url("Images/presentation-background.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	color:  white;
+	text-align: center;
+	font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight:300;
+}
+
+#heading {
+	margin-top: 100;
+}
+
+#student-list-div {
+	margin-top: 200;
+}
+
+#student-list li{
+	display: inline;
+	padding-left: 50;
+}
+
+#test{
+  background: rgba(0,0,0,0.5);
+  padding: 50px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  margin: -20px;
+}
+li {
+	font-family: 'Montserrat', sans-serif;
+	color:  white;
+	font-size: 30px;
+}
+
+.students, .student-ids {
+    transition: 2s all ease-in-out;
+    opacity: 0;
+} 
+
+#student-id-list li{
+	display: inline;
+	font-size: 20px;
+	padding-left: 120px;
+}
+
+.fadein {
+    animation: fadeIn 0.9s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 90;
+  margin-left: 1200;
+}
+
+.loading--full-height {
+  align-items: left;
+  height: 100%;
+}
+
+.loading::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 10px solid #dddddd;
+  border-top-color: #5C5C5C;
+  border-radius: 50%;
+  transform: rotate(0.16turn);
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  /* Safari support */
+  from {
+    transform: rotate(0turn);
+  }
+  
+  to {
+    transform: rotate(1turn);
+  }
+}

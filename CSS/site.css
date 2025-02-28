@@ -1,0 +1,353 @@
+html{scroll-behavior:smooth}
+body {
+	background-image: url(images/background_image.jpeg);
+	background-attachment: fixed;
+	background-size: cover;
+	font-family:arial;
+}
+#total{
+	color:white;
+	font-size:20px;
+	font-weight:300;
+	text-align: center;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	width: 100%;
+	text-align: right;
+	margin-top: -253px;
+	position:fixed;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+	margin-left: -20px;
+}
+p{
+	margin: 0px;
+	margin-bottom: 2px;
+}
+h1{
+	margin-bottom: 0px;
+}
+#content{
+	height: 100%;
+	width: 100%;
+	margin-top:250px;
+	z-index: 1;
+}
+h3{
+	color:white;
+	font-size:20px;
+	font-weight:300;
+	text-align: center;
+	letter-spacing: 5px;
+	display:grid;
+	text-transform: uppercase;
+	margin-bottom:0px;
+	
+}
+.heading{
+	margin-top:0px;
+	color:white;
+	font-size:80px;
+	font-weight:300;
+	text-align: center;
+	letter-spacing: 5px;
+	display:grid;
+	text-transform: uppercase;
+	margin-bottom:0px;
+}
+
+#main {
+  height: 100vh;
+  width: 100%;
+  display: table;
+  
+}
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  scroll-behavior: smooth;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+img{
+	margin-top: 20px;
+}
+.card{
+	margin-right:30px;
+	margin-left:10px;
+	margin-top:20px;
+	background: rgba(255,255,255, 0.7);
+	padding:10px;
+	color:black;
+	font-weight:bold;
+	border:5px solid;
+	border-radius: 25px;
+	border-color:black;
+	text-align:center;
+	display: inline-grid;
+	width: 320px;
+	justify-content: center;
+}
+#card_section{
+	margin-left: 150px;
+	justify-content: center;
+	align-items: center;
+}
+.cart_button{
+	width:200px;
+	margin-top:10px;
+	padding:10px;
+	border:3px solid;
+	border-color:white;
+	border-radius:15px;
+	outline-style:none;
+	background: rgba(0,0,0, 0.7);
+	color: white;
+}
+.quantity{
+	text-align:center;
+	border:3px solid;
+	border-color:#5f5d5d;
+	border-radius:15px;
+	font-weight:bold;
+	outline-style:none;
+	padding: 10px;
+	width: 100px;
+	font-size: 15px;
+}
+.cart_button:hover{
+	width:200px;
+	margin-top:10px;
+	padding:10px;
+	border:3px solid;
+	border-color:black;
+	border-radius:15px;
+	font-weight:bold;
+	outline-style:none;
+	background: rgba(255,255,255, 0.7);
+	color: black;
+}
+#form{
+	background: rgba(0,0,0, 0.5);
+	padding:20px;
+	border-radius:10px;
+	border:3px solid;
+	border-color:black;
+	width:70%;
+	margin:auto;
+	margin-top: 30px;
+}
+.queryForm{
+	width:70%;
+	color:white;
+	margin:auto;
+	margin-top:30px;
+	display:flow-root;
+	font-size: 30px;
+	font-weight: 0px;
+}
+.fieldInput{
+	float:right;
+	width:400px;
+	height: 40px;
+	text-align:center;
+	border:3px solid;
+	border-color:#5f5d5d;
+	border-radius:10px;
+	font-weight:bold;
+	outline-style:none;
+	font-size: 20px;
+}
+#checkout,#chooseMore{
+	width:200px;
+	margin-top:50px;
+	padding:10px;
+	border:3px solid;
+	border-color:white;
+	border-radius:10px;
+	outline-style:none;
+	background: rgba(0,0,100, 0.7);
+	color: white;
+	text-decoration: none;
+	text-align: center;font-size: 15px;
+
+
+}
+
+#chooseMore{
+	background: rgba(255,0,0, 0.7);
+}
+#checkout:hover{
+	background: rgba(0,0,220,1);
+	font-weight: bold;
+
+}
+#chooseMore:hover{
+	background: rgba(255,0,0,1);
+	font-weight: bold;
+}
+#invoiceBox{
+	background: rgba(0,0,0, 0.5);
+	padding:20px;
+	border-radius:10px;
+	border:3px solid;
+	border-color:black;
+	width:70%;
+	margin:auto;
+	margin-top: 30px;
+	height: auto;
+}
+.invoiceSummary{
+	padding:20px;
+	width:60%;
+	margin:auto;
+	margin-left: 0px;
+	margin-top:50px;
+	display: grid;
+	grid-template-columns: max-content auto;
+}
+.key,#invoiceText{
+	text-transform: uppercase;
+	padding-bottom:20px;
+	color:#817a7a;
+	font-weight:bold;
+	font-size:25px;
+}
+#invoiceText{
+	font-size: 50;
+	font-weight: normal;
+	margin-top: 50px;
+}
+.value{
+	padding-bottom:20px;
+	color:white;
+	font-size:25px;
+	width:400px;
+	display:block;
+	overflow-wrap: break-word;
+}
+.detail{
+	font-size: 70;
+	color: white;
+}
+.alignCenter{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.editandsendbuttons{
+	width:100px;
+	margin-top:20px;
+	padding:5px 20px 5px 20px;
+	border:3px solid;
+	border-color:black;
+	border-radius:15px;
+	font-weight:bold;
+	outline-style:none;
+}
+.pageEditor{
+	color:white;
+	float:right;
+	background: rgba(0,0,0, 0.5);
+	margin-top:20px;
+	margin-right:50px;
+	margin-bottom:50px;
+	text-decoration: none;
+	font-family: Verdana;
+	padding:20px;
+	border:1px solid;
+	border-color:white;
+	border-radius:10px;
+}
+
+.scroll-up {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-up {
+	margin-top: 50px;
+	float: right;
+  scroll-behavior: smooth;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-up:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-225deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}

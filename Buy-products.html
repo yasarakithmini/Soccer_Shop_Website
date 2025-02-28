@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	
+		<link rel="stylesheet" href="CSS/site.css">
+		<title>
+			Buy products
+		</title>
+		<link rel = "icon" href = "CSS/Images/favicon.png" type = "image/x-icon">
+	</head>
+	<body>
+	<div id="total">
+		<p style="margin-right: 20px;">Total : $0</p>
+	</div>
+	<div id="content">
+			
+			<div id="main">
+				<h3 >Welcome to Football Club's</h3>
+				<h1 class="heading">Online Shop</h1>
+				<a href="#cardSec" class="scroll-down"></a>
+			</div>
+			<hr>
+			<section id="card_section" >
+				<form id="quantityForm">
+					<h1 class="heading" id="cardSec" style="margin-left: -150px;padding-top:50px;font-size: 60px">Choose Your Product</h1>
+					<div class="card">
+					  <img src="CSS/Images/bag.jpeg" alt="duffel bag" width="200" height="200" style="border-radius:15px">
+					  <h1>Duffel Bag</h1>
+					  <p class="price">$29.99</p>
+						<p><input class="quantity" type="text" name="bagVal" id="bagVal" placeholder="Quantity"></p>
+						<button type="button" class="cart_button" onclick="addToCart(this.form.bagVal.value,'bag')">ADD TO CART</button>
+					</div>
+					<div class="card">
+					  <img src="CSS/Images/cap.jpeg" alt="Bayern Cap" width="200" height="200" style="border-radius: 15px">
+					  <h1>FC Bayern DNA Cap</h1>
+					  <p class="price">$9.99</p>
+					  <p><input class="quantity" type="text" name="capVal" id="capVal" placeholder="Quantity"></p>
+					  <p><button type="button" class="cart_button" onclick="addToCart(this.form.capVal.value,'cap')">ADD TO CART</button></p>
+					</div>
+					<div class="card">
+					  <img src="CSS/Images/shoes.jpg" alt="Football Boots" width="200" height="200" style="border-radius: 15px">
+					  <h1>Football Boots</h1>
+					  <p class="price">$54.99</p>
+					  <p><input class="quantity" type="text" name="bootVal" id="bootVal" placeholder="Quantity"></p>
+					  <p><button type="button" class="cart_button" onclick="addToCart(this.form.bootVal.value,'boots')">ADD TO CART</button></p>
+					</div>
+					<div class="card">
+					  <img src="CSS/Images/gloves.jpeg" alt="Soft Gloves" width="200" height="200" style="border-radius: 15px">
+					  <h1>Soft Gloves</h1>
+					  <p class="price">$7.99</p>
+					  <p><input class="quantity" type="text" name="gloveVal" id="gloveVal" placeholder="Quantity"></p>
+					  <p><button type="button" class="cart_button" onclick="addToCart(this.form.gloveVal.value,'gloves')">ADD TO CART</button></p>
+					</div>
+					<div class="card">
+					  <img src="CSS/Images/socks.jpeg" alt="Home Socks" width="200" height="200" style="border-radius: 15px">
+					  <h1>Home Socks</h1>
+					  <p class="price">$4.99</p>
+					  <p><input class="quantity" type="text" name="socksVal" id="socksVal" placeholder="Quantity"></p>
+					  <p><button type="button" class="cart_button" onclick="addToCart(this.form.socksVal.value,'socks')">ADD TO CART</button></p>
+					</div>
+					<div class="card">
+					  <img src="CSS/Images/ankle_cover.jpeg" alt="Ankle Cover" width="200" height="200" style="border-radius: 15px">
+					  <h1>Ankle Cover</h1>
+					  <p class="price">$19.99</p>
+					  <p><input class="quantity" type="text" name="ankleVal" id="ankleVal" placeholder="Quantity"></p>
+					  <p><button type="button" class="cart_button" onclick="addToCart(this.form.ankleVal.value,'ankle')">ADD TO CART</button></p>
+					</div>
+			</form>
+			</section>
+			<hr style="margin-top:150px">
+
+			<section id="form_section" >
+				<h1 class="heading" style="padding-top:100px;font-size: 60px">Enter Your Personal Details</h1>
+				<form id="form2">
+					<div id="form" >
+					<!--Shows the fformorm with fields and view query button -->
+						<div class="queryForm">
+							<label for="firstName">First Name :</label>
+							<input class="fieldInput" type="text" name="firstName" id="firstName" placeholder="Enter your First name"><br>
+						</div>
+						<div class="queryForm">
+							<label for="lastName">Last Name :</label>
+							<input class="fieldInput" type="text" name="lastName" id="lastName" placeholder="Enter your Last name"><br>
+						</div>
+						<div class="queryForm">
+							<label for="email">Email :</label>
+							<input class="fieldInput" type="email" id="email" name="email" placeholder="alex123@gmail.com"><br>
+						</div>
+						<div class="queryForm">
+							<label for="phone">Contact Number :</label>
+							<input class="fieldInput" type="tel" id="phone" name="phone" placeholder="+9476 1234567"><br>
+						</div>
+						<div class="alignCenter">
+							<a href="#invoice" id="checkout" onclick="validate()">CHECKOUT</a>
+							<a href="#cardSec" id="chooseMore" style="margin-left:20px;">CHOOSE MORE</a>
+						</div>
+					</div>
+				</form>
+			</section>
+			<hr style="margin-top:150px">
+
+			<section id="invoice" >
+				<h1 class="heading" id="invoiceSec" style="padding-top:100px;font-size: 60px">INVOICE</h1>
+				<div id="invoiceBox">
+					<div id="invoiceText">Nothing to display here yet.</div>
+				</div>
+			</section>
+			<div><a href="Page-editor.html" target="_blank" class="pageEditor">Page Editor</a></div>
+			
+		</div>
+		<div style="width: 50%">
+		<a href="#content" class="scroll-up"></a>
+		</div>
+		<script>
+			var total = 0;
+			var invoice = '';
+
+			function addToCart(valRef,product){
+				if(parseInt(valRef).toString() == "NaN"){
+					alert("Please enter a valid quantity to field");
+					document.getElementById('quantityForm').reset();
+				}
+				else{
+
+					if(valRef==""){
+						alert("Please enter the quantity before adding to the cart");
+					}
+					else if(product=="bag"){
+						console.log("total");
+						total = total + (parseInt(valRef) * 29.99);
+						console.log(total);
+						invoice = invoice + '<dt class="key"> Product: </dt>' +
+											'<dd class="value"> Duffel Bag</dd>' +
+											'<dt class="key"> Quantity: </dt>' +
+											'<dd class="value">'+ valRef + '</dd>' +
+											'<dt class="key"> Price: </dt>' +
+											'<dd class="value"> $29.99</dd>';
+						document.getElementById('quantityForm').reset();
+						alert("Added to the cart successfully!");
+
+					}
+					else if(product=="cap"){
+						total = total + (parseInt(valRef) * 9.99);
+						invoice = invoice + '<dt class="key"> Product: </dt>' +
+											'<dd class="value"> FC Bayern DNA Cap </dd>' +
+											'<dt class="key"> Quantity: </dt>' +
+											'<dd class="value">'+ valRef + '</dd>' +
+											'<dt class="key"> Price: </dt>' +
+											'<dd class="value"> $9.99</dd>'
+						document.getElementById('quantityForm').reset();
+						alert("Added to the cart successfully!"); 
+
+					}
+					else if(product=="boots"){
+						total = total + (parseInt(valRef) * 54.99);
+						invoice = invoice + '<dt class="key"> Product: </dt>' +
+											'<dd class="value"> Football Boots </dd>' +
+											'<dt class="key"> Quantity: </dt>' +
+											'<dd class="value">'+ valRef + '</dd>' +
+											'<dt class="key"> Price: </dt>' +
+											'<dd class="value"> $54.99</dd>' 
+						document.getElementById('quantityForm').reset();
+						alert("Added to the cart successfully!");
+
+					}
+					else if(product=="gloves"){
+						total = total + (parseInt(valRef) * 7.99);
+						invoice = invoice + '<dt class="key"> Product: </dt>' +
+											'<dd class="value"> Soft Gloves </dd>' +
+											'<dt class="key"> Quantity: </dt>' +
+											'<dd class="value">'+ valRef + '</dd>' +
+											'<dt class="key"> Price: </dt>' +
+											'<dd class="value"> $7.99</dd>' 
+						document.getElementById('quantityForm').reset();
+						alert("Added to the cart successfully!");
+
+					}
+					else if(product=="socks"){
+						total = total + (parseInt(valRef) * 4.99);
+						invoice = invoice + '<dt class="key"> Product: </dt>' +
+											'<dd class="value"> Home Socks </dd>' +
+											'<dt class="key"> Quantity: </dt>' +
+											'<dd class="value">'+ valRef + '</dd>' +
+											'<dt class="key"> Price: </dt>' +
+											'<dd class="value"> $4.99</dd>' 
+						document.getElementById('quantityForm').reset();
+						alert("Added to the cart successfully!");
+
+					}
+					else if(product=="ankle"){
+						total = total + (parseInt(valRef) * 19.99);
+						invoice = invoice + '<dt class="key"> Product: </dt>' +
+											'<dd class="value"> Ankle Cover </dd>' +
+											'<dt class="key"> Quantity: </dt>' +
+											'<dd class="value">'+ valRef + '</dd>' +
+											'<dt class="key"> Price: </dt>' +
+											'<dd class="value" > $19.99</dd>' 
+						document.getElementById('quantityForm').reset();
+						alert("Added to the cart successfully!");
+
+					}
+					else{
+						document.getElementById('quantityForm').reset();
+						alert("Please check the quantity added and try again");
+					}
+					updateTotal();
+				}
+			}
+
+			function alertHandler(array){
+				var i;
+				for(i=0;i<array.length;i++){
+					
+					alert("Please enter your "+array[i]+" to the relavent field")
+					
+				}
+			}
+
+			function validate(){
+				var formRef = document.getElementById('form2');
+				unfilled=[];
+				if(formRef.firstName.value==""){
+					unfilled.push("first name");
+				}
+				if(formRef.lastName.value==""){
+					unfilled.push("last name");
+				}
+				if(formRef.email.value==""){
+					unfilled.push("email");
+				}
+				if(formRef.phone.value==""){
+					unfilled.push("phone number");
+				}
+				alertHandler(unfilled);
+				if(unfilled.length==0){
+					document.getElementById("invoiceText").innerHTML ='<dl class="invoiceSummary"> <dt class="key">Name : </dt>'+
+																	'<dd class="value">'+formRef.firstName.value+'    '+formRef.lastName.value+'</dd>'+
+																	'<dt class="key">Email : </dt>'+
+																	'<dd class="value">'+formRef.email.value+'</dd>'+
+																	'<dt class="key">Contact Number : </dt>'+
+																	'<dd class="value">'+formRef.phone.value+'</dd><dt></dt><dd></dd>'+
+																	'<dt class="detail" style="margin-top:20px"> Invoice Details</dt><dd></dd>' +
+																	'<dt class="detail">-------------------------------------------- </dt><dd></dd>'+
+																	invoice + '</dl>' +
+																	'<dt class="key" style="margin-top:20px;margin-left:800px">Total Price:</dt>' +
+																	'<dd class="value" style="margin-left:840px">$'+total+'</dd>' ;
+
+				}
+			}
+
+			function updateTotal(){
+				document.getElementById("total").innerHTML = '<p style="margin-right: 20px;">Total : $'+total+'</p>'
+			}
+		</script>
+	</body>
+	
+</html>

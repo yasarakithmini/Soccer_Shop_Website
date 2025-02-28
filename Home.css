@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@300&family=Shadows+Into+Light&family=Source+Sans+Pro:wght@200;300&display=swap');
+
+/* Banner */
+.banner-area{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 3%, rgba(5,162,113,0.1881127450980392) 100%, rgba(0,212,255,1) 100%), url(Gp3.jpg);
+    background-size: cover;
+    background-position:  center;
+    height: 80vh;
+}
+
+.banner-text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-text h2{
+    font-family: Shadows into Light, sans-serif;
+    color: #fff;
+    margin-top: -300px;
+    font-size: 56px;
+    text-align: center;
+}
+
+.banner-text a{
+	    border:1px solid #fff;
+		padding: 10px 25px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+		margin-top: 20px;
+		display: inline-block;
+		color: #fff;
+    }
+	
+.banner-text a:hover{
+    background: #fff;
+    color: #333;
+}	
+
+/*Footer */	
+.footer{
+    text-align: center;
+    position: absolute;
+    color: #ffffff;
+    left: 0;
+    bottom: 9;
+    width: 100%;
+    background: #5D6D7E;
+}
+.bottom-links{
+	color: #4f1573;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+	<meta http-equiv="refresh" content="4; URL=home.html" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="CSS/Presentation-page.css">
+	<title>Presentation Page</title>
+</head>
+
+<body>
+	<div id="test">
+		<div id="heading">
+			<h1>This Website is <br> proudly presented  to you by:</h1>
+		</div>
+	
+		<div id="student-list-div">
+			<ul id="student-list">
+				<li class="students">Savindi Sudharika</li>
+				<li class="students">Yasara Kithmini</li>
+				<li class="students">Thevindu Uyangoda</li>
+				<li class="students">Sharoon Sivaneswaran</li>
+			</ul>
+		</div>
+
+		<div>
+			<ul id="student-id-list">
+				<li class="student-ids">w1912928</li>
+				<li class="student-ids" style="padding-left: 185px;">w1912950</li>
+				<li class="student-ids" style="padding-left: 180px;">w1912846</li>
+				<li class="student-ids" style="padding-left: 260px;">w1913288</li>
+			</ul>
+		</div>
+	
+		<div class="loading loading--full-height"></div>
+	</div>
+	<script>
+	var studs = document.getElementsByClassName("students");
+	for (let i = 0; i < studs.length; ++i) {
+      fadeIn(studs[i], i * 1000)
+    }
+
+    var studId = document.getElementsByClassName("student-ids");
+    for(let i = 0; i < studId.length; i++){
+    	fadeIn(studId[i], i * 1000)
+    }
+    
+    function fadeIn (item, delay) {
+      setTimeout(() => {
+        item.classList.add('fadein')
+      }, delay)
+    }
+</script>
+
+</body>
+
+</html>
